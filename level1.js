@@ -6,4 +6,7 @@ const item2=localStorage.getItem('age');
 // console.log(item1,item2);
 localStorage.removeItem('name');
 localStorage.removeItem('age');
-localStorage.setItem('object',JSON.stringify({firstName:'abraham',lastName:'linkon'}));
+const str=JSON.stringify({firstName:'abraham',lastName:'linkon'});
+localStorage.setItem('string',str);
+const obj=JSON.parse(str);
+console.log(obj);
