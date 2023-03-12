@@ -1,15 +1,25 @@
 const addFunction=(input,text)=>{
     const name=input.value;
     const title=text.innerText;
-    localStorage.setItem(JSON.stringify(title),JSON.stringify(name));
+    localStorage.setItem(title,name);
 
 }
 const deleteFunction=(title)=>{
-    // console.log(title);
-    localStorage.removeItem('title');
+    console.log(title);
+    localStorage.removeItem(title);
 }
 document.getElementById('delete1').addEventListener('click',function(){
     const peraText=document.getElementById('pera1').innerText;
+    deleteFunction(peraText);
+    
+});
+document.getElementById('delete2').addEventListener('click',function(){
+    const peraText=document.getElementById('pera2').innerText;
+    deleteFunction(peraText);
+    
+});
+document.getElementById('delete3').addEventListener('click',function(){
+    const peraText=document.getElementById('pera3').innerText;
     deleteFunction(peraText);
     
 });
@@ -32,8 +42,6 @@ document.getElementById('add3').addEventListener('click',function(){
     addFunction(inputName,peraText);
     inputName.value='';
 })
-// document.getElementById('delete1').addEventListener('click',function(){
-//     const peraText=document.getElementById('pera1');
-//     deleteFunction(peraText);
-    
-// })
+document.getElementById('reset').addEventListener('click',function(){
+    localStorage.clear();
+})
